@@ -14,7 +14,7 @@ resource "aws_db_instance" "db-instance" {
   engine                 = "mysql"
   identifier             = "swiggy-db"
   username               = "admin"
-  password               = "Goutham@1404"
+  password               = "Goutham1404"
   parameter_group_name   = "default.mysql8.0"
   db_subnet_group_name   = aws_db_subnet_group.db.name
   vpc_security_group_ids = [aws_security_group.ec2-db.id]
@@ -23,6 +23,7 @@ resource "aws_db_instance" "db-instance" {
   publicly_accessible    = false
 
   lifecycle {
+    prevent_destroy = false
     ignore_changes  = all
   }
 }
