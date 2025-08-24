@@ -35,7 +35,7 @@ resource "aws_launch_template" "temp" {
 
   user_data = base64encode(file("apache.sh"))
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     ignore_changes  = all
   }
 
