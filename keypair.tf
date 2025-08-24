@@ -11,3 +11,8 @@ resource "local_file" "key" {
   filename = "goutm.pem"
   content  = tls_private_key.rsa.private_key_pem
 }
+
+resource "aws_key_pair" "kp" {
+  public_key = tls_private_key.rsa.public_key_pem
+  key_name   = "goutm"
+}
