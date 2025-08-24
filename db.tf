@@ -12,7 +12,6 @@ resource "aws_db_instance" "db-instance" {
   allocated_storage      = 20
   storage_type           = "gp3"
   engine                 = "mysql"
-  engine_version         = "8.0.35"
   identifier             = "swiggy-db"
   username               = "admin"
   password               = "Goutham@1404"
@@ -24,7 +23,6 @@ resource "aws_db_instance" "db-instance" {
   publicly_accessible    = false
 
   lifecycle {
-    prevent_destroy = false
     ignore_changes  = all
   }
 }
