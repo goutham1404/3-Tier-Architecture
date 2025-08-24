@@ -8,11 +8,11 @@ resource "aws_db_subnet_group" "db" {
 
 # MySQL RDS Instance
 resource "aws_db_instance" "db-instance" {
-  instance_class         = "db.t2.micro"
+  instance_class         = "db.t3.micro"
   allocated_storage      = 20
   storage_type           = "gp3"
   engine                 = "mysql"
-  engine_version         = "8.0"
+  engine_version         = "8.0.35"
   identifier             = "swiggy-db"
   username               = "admin"
   password               = "Goutham@1404"
